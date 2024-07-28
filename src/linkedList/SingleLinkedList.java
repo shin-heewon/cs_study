@@ -34,7 +34,7 @@ public class SingleLinkedList<T> {
     size++;
   }
 
-  public Node searchByIndex(int index){
+  public Node<T> searchByIndex(int index){
 
     Node<T> node = head;//head부터 시작, head가 가르키는 노드 index=0
     for (int i=0; i<index; i++) {
@@ -45,8 +45,10 @@ public class SingleLinkedList<T> {
 
 
   public void insert(int index, T data) {
-    if (index == 0) {addFirst(data); return;}
-    if (index == size) {addLast(data); return;}
+    if (size==0) {addFirst(data); return;}
+    if (index == size) {
+      System.out.println("dfdfdfdfd");
+      addLast(data); return;}
 
     Node<T> newNode = new Node<>(data);
 
@@ -56,6 +58,8 @@ public class SingleLinkedList<T> {
     prev.next = newNode;
     newNode.next = next;
     size++;
+    System.out.println("tail "+this.tail.data);
+
   }
 
   public void delete(T data) {
@@ -74,7 +78,7 @@ public class SingleLinkedList<T> {
       curr = curr.next;
     }
     prev.next = curr.next;
-    if (curr.next == null) {tail=prev;}
+    if (curr == tail) {tail=prev;}
 
     size--;
   }

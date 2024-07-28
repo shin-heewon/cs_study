@@ -12,7 +12,7 @@ public class SingleLinkedListEx {
     mylist.printAll();
     System.out.println("====================");
 
-    mylist.delete(1);
+    mylist.delete(9);
     mylist.printAll();
     System.out.println("====================");
     System.out.println(mylist.tail.data);
