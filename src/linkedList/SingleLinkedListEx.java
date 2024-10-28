@@ -12,10 +12,18 @@ public class SingleLinkedListEx {
     mylist.printAll();
     System.out.println("====================");
 
-    mylist.delete(9);
+    mylist.insert(3, 777);
+    mylist.printAll();
+
+    System.out.println("======================");
+
+
+    mylist.delete(10);
     mylist.printAll();
     System.out.println("====================");
-    System.out.println(mylist.tail.data);
+    System.out.println("첫번째에 삽입");
+    mylist.addFirst(100);
+    mylist.printAll();
 
 
   }

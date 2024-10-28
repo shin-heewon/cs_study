@@ -19,6 +19,7 @@ public class SingleLinkedList<T> {
     size++;
     if(head.next == null) {//데이터가 새 노드밖에 없으면
       tail = newNode;
+      //tail = head;
     }
 
   }
@@ -46,9 +47,7 @@ public class SingleLinkedList<T> {
 
   public void insert(int index, T data) {
     if (size==0) {addFirst(data); return;}
-    if (index == size) {
-      System.out.println("dfdfdfdfd");
-      addLast(data); return;}
+    if (index == size) {addLast(data); return;}
 
     Node<T> newNode = new Node<>(data);
 
@@ -58,7 +57,7 @@ public class SingleLinkedList<T> {
     prev.next = newNode;
     newNode.next = next;
     size++;
-    System.out.println("tail "+this.tail.data);
+    //System.out.println("tail "+this.tail.data);
 
   }
 
@@ -82,7 +81,6 @@ public class SingleLinkedList<T> {
 
     size--;
   }
-
 
 
 
